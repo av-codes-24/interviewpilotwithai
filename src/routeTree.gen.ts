@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiEvaluateRouteImport } from './routes/api/evaluate'
+import { Route as ApiInterviewRouteImport } from './routes/api/interview'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiEvaluateRoute = ApiEvaluateRouteImport.update({
+  id: '/api/evaluate',
+  path: '/api/evaluate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiInterviewRoute = ApiInterviewRouteImport.update({
+  id: '/api/interview',
+  path: '/api/interview',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/evaluate': typeof ApiEvaluateRoute
+  '/api/interview': typeof ApiInterviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/evaluate': typeof ApiEvaluateRoute
+  '/api/interview': typeof ApiInterviewRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/evaluate': typeof ApiEvaluateRoute
+  '/api/interview': typeof ApiInterviewRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/api/evaluate' | '/api/interview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/api/evaluate' | '/api/interview'
+  id: '__root__' | '/' | '/api/evaluate' | '/api/interview'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiEvaluateRoute: typeof ApiEvaluateRoute
+  ApiInterviewRoute: typeof ApiInterviewRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/evaluate': {
+      id: '/api/evaluate'
+      path: '/api/evaluate'
+      fullPath: '/api/evaluate'
+      preLoaderRoute: typeof ApiEvaluateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/interview': {
+      id: '/api/interview'
+      path: '/api/interview'
+      fullPath: '/api/interview'
+      preLoaderRoute: typeof ApiInterviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiEvaluateRoute: ApiEvaluateRoute,
+  ApiInterviewRoute: ApiInterviewRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
