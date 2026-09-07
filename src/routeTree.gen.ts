@@ -10,33 +10,81 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ReportRouteImport } from './routes/report'
+import { Route as ApiEvaluateRouteImport } from './routes/api/evaluate'
+import { Route as ApiInterviewRouteImport } from './routes/api/interview'
+import { Route as InterviewRoleIdRouteImport } from './routes/interview.$roleId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReportRoute = ReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiEvaluateRoute = ApiEvaluateRouteImport.update({
+  id: '/api/evaluate',
+  path: '/api/evaluate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiInterviewRoute = ApiInterviewRouteImport.update({
+  id: '/api/interview',
+  path: '/api/interview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterviewRoleIdRoute = InterviewRoleIdRouteImport.update({
+  id: '/interview/$roleId',
+  path: '/interview/$roleId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/report': typeof ReportRoute
+  '/api/evaluate': typeof ApiEvaluateRoute
+  '/api/interview': typeof ApiInterviewRoute
+  '/interview/$roleId': typeof InterviewRoleIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/report': typeof ReportRoute
+  '/api/evaluate': typeof ApiEvaluateRoute
+  '/api/interview': typeof ApiInterviewRoute
+  '/interview/$roleId': typeof InterviewRoleIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/report': typeof ReportRoute
+  '/api/evaluate': typeof ApiEvaluateRoute
+  '/api/interview': typeof ApiInterviewRoute
+  '/interview/$roleId': typeof InterviewRoleIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/report' | '/api/evaluate' | '/api/interview' | '/interview/$roleId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    '/' | '/report' | '/api/evaluate' | '/api/interview' | '/interview/$roleId'
+  id:
+    | '__root__'
+    | '/'
+    | '/report'
+    | '/api/evaluate'
+    | '/api/interview'
+    | '/interview/$roleId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ReportRoute: typeof ReportRoute
+  ApiEvaluateRoute: typeof ApiEvaluateRoute
+  ApiInterviewRoute: typeof ApiInterviewRoute
+  InterviewRoleIdRoute: typeof InterviewRoleIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +96,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/report': {
+      id: '/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof ReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/evaluate': {
+      id: '/api/evaluate'
+      path: '/api/evaluate'
+      fullPath: '/api/evaluate'
+      preLoaderRoute: typeof ApiEvaluateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/interview': {
+      id: '/api/interview'
+      path: '/api/interview'
+      fullPath: '/api/interview'
+      preLoaderRoute: typeof ApiInterviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interview/$roleId': {
+      id: '/interview/$roleId'
+      path: '/interview/$roleId'
+      fullPath: '/interview/$roleId'
+      preLoaderRoute: typeof InterviewRoleIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ReportRoute: ReportRoute,
+  ApiEvaluateRoute: ApiEvaluateRoute,
+  ApiInterviewRoute: ApiInterviewRoute,
+  InterviewRoleIdRoute: InterviewRoleIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
