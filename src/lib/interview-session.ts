@@ -1,10 +1,11 @@
-import type { AnswerRecord, RoleId } from "./interview-data";
+import type { ChatMessage, Report, RoleId } from "./interview-data";
 
 const KEY = "interviewpilot.session";
 
 export type SessionData = {
   roleId: RoleId;
-  answers: AnswerRecord[];
+  transcript: ChatMessage[];
+  report?: Report;
   finishedAt: number;
 };
 
