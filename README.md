@@ -1,41 +1,72 @@
-# InterviewPilot AI
+# InterviewPilot 🎯
 
-Build the interface in Lovable
-Build "InterviewPilot" — a mock interview app:
+**AI-powered mock interview platform for practicing role-specific technical interviews.**
 
-- Screen 1: pick a role (3 cards: SDE Intern,
+InterviewPilot simulates an interview experience where users select a role, answer AI-generated questions one at a time, and receive a structured performance report at the end.
 
-  Data Analyst, Frontend Developer)
+## 🚀 Live Demo
 
-- Screen 2: chat interface — AI asks questions,
+**[Try InterviewPilot](https://interviewpilotwithai.lovable.app)**
 
-  user types answers, timer shown per question
+## ✨ Features
 
-- Screen 3: report card — score per question,
+* 🎯 Role-based interview selection
+* 💬 Interactive AI interview chat
+* 🔢 Exactly 10 questions per interview
+* ⏱️ Timer for each question
+* 📊 Score for every answer
+* 💪 Two personalized strengths
+* ⚠️ Two areas for improvement
+* 💡 Model answer for the weakest response
+* 📱 Clean and responsive interface
 
-  strengths, weaknesses, one model answer
+## 👨‍💻 Available Roles
 
-- Professional look: navy + white, clean fonts
+* **SDE Intern**
+* **Data Analyst**
+* **Frontend Developer**
 
-This project was built with [Lovable](https://lovable.dev).
+## 🛠️ Tech Stack
 
-**Live app**: https://interviewpilotwithai.lovable.app
+* React
+* TypeScript
+* Tailwind CSS
+* AI API integration
+* Lovable
+* GitHub
 
-## Build with Lovable
+## 🧠 How It Works
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c876b1e5-f13b-46a4-ba96-c18c72e81602).
+1. Select an interview role.
+2. Start the mock interview.
+3. The AI asks one question at a time.
+4. Submit your answer and continue to the next question.
+5. Complete all 10 questions.
+6. Receive a detailed performance report.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## 📸 Screenshots
 
-## Development
+*Add screenshots of the role selection, interview screen, and final report here.*
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## 🎯 Project Goal
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+The goal of InterviewPilot is to make technical interview practice more structured and realistic by combining conversational AI with a fixed interview flow and actionable feedback.
+
+## 🔮 Future Improvements
+
+* Voice-based interviews
+* Difficulty selection
+* Interview history and progress tracking
+* More job roles
+* Personalized question difficulty
+* Better analytics and performance tracking
+
+## 🤖 Built with Lovable
+
+This project was developed with the help of **[Lovable](https://lovable.dev/)** and GitHub.
+
+Lovable was used to accelerate the development process while maintaining the ability to work with and manage the project's source code.
+
+## 📄 License
+
+This project is for educational and portfolio purposes.
