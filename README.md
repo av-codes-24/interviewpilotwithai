@@ -44,22 +44,10 @@ InterviewPilot simulates an interview experience where users select a role, answ
 5. Complete all 10 questions.
 6. Receive a detailed performance report.
 
-## 📸 Screenshots
-
-*Add screenshots of the role selection, interview screen, and final report here.*
-
 ## 🎯 Project Goal
 
 The goal of InterviewPilot is to make technical interview practice more structured and realistic by combining conversational AI with a fixed interview flow and actionable feedback.
 
-## 🔮 Future Improvements
-
-* Voice-based interviews
-* Difficulty selection
-* Interview history and progress tracking
-* More job roles
-* Personalized question difficulty
-* Better analytics and performance tracking
 
 ## 🤖 Built with Lovable
 
